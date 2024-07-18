@@ -24,6 +24,7 @@ const overlay = document.querySelector("[data-overlay]");
 const modalImg = document.querySelector("[data-modal-img]");
 const modalTitle = document.querySelector("[data-modal-title]");
 const modalText = document.querySelector("[data-modal-text]");
+const modalDate = document.querySelector("[data-modal-date]");
 
 // modal toggle function
 const testimonialsModalFunc = function () {
@@ -42,6 +43,19 @@ for (let i = 0; i < testimonialsItem.length; i++) {
     modalText.innerHTML = this.querySelector(
       "[data-testimonials-text]"
     ).innerHTML;
+    // modalDate.innerHTML = this.querySelector("[data-testimonials-date]").innerHTML;
+    // Set the date based on the index
+    let dateText = "";
+    if (i === 0) {
+      dateText = "<b class='gold-color'>From</b> Feb-2024 <b class='gold-color'>to</b> Jun-2024";
+    } else if (i === 1) {
+      dateText = "<b class='gold-color'>From</b> Jul-2023 <b class='gold-color'>to</b> Sep-2023";
+    } else if (i === 2) {
+      dateText = "<b class='gold-color'>From</b> Oct-2022 <b class='gold-color'>to</b> Nov-2022";
+    }
+
+    // Assuming there's an element to display the date in your modal
+    modalDate.innerHTML = dateText;
 
     testimonialsModalFunc();
   });
@@ -189,10 +203,9 @@ function getMainColor(image) {
   return `rgb(${mainColor})`;
 }
 
-
 // JavaScript to apply the effect on hover
-document.querySelectorAll('.glow-on-hover').forEach(item => {
-  item.addEventListener('mouseover', function() {
+document.querySelectorAll(".glow-on-hover").forEach((item) => {
+  item.addEventListener("mouseover", function () {
     applyGlowEffect(this);
   });
 });

@@ -1881,3 +1881,12 @@ textarea.form-input::-webkit-resizer { display: none; }
   .timeline-text { max-width: 700px; }
 
 }
+
+#myImagee:hover {
+  /* Styles to apply on hover, e.g., a glow effect */
+  filter: drop-shadow(0 0 10px white) ;
+}
+
+.gold-color {
+  color: gold;
+}
