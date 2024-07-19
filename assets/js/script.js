@@ -97,6 +97,8 @@ const filterFunc = function (selectedValue) {
     } else {
       filterItems[i].classList.remove("active");
     }
+
+    console.log(selectedValue)
   }
 };
 
@@ -152,56 +154,6 @@ for (let i = 0; i < navigationLinks.length; i++) {
   });
 }
 
-function getMainColor(image) {
-  // Create a canvas element
-  const canvas = document.createElement("canvas");
-  const ctx = canvas.getContext("2d");
-
-  // Set the canvas dimensions to the image dimensions
-  canvas.width = image.width;
-  canvas.height = image.height;
-
-  // Draw the image on the canvas
-  ctx.drawImage(image, 0, 0, image.width, image.height);
-
-  // Get the image data from the canvas
-  const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-  const data = imageData.data;
-
-  // Create an object to store color counts
-  const colorCounts = {};
-
-  // Iterate through every pixel
-  for (let i = 0; i < data.length; i += 4) {
-    // Get the RGBA values
-    const r = data[i];
-    const g = data[i + 1];
-    const blue = data[i + 2];
-    const alpha = data[i + 3];
-
-    // Ignore transparent pixels
-    if (alpha < 255) continue;
-
-    // Create a color string in the format "r,g,b"
-    const color = `${r},${g},${blue}`;
-
-    // Increment the count for this color
-    colorCounts[color] = (colorCounts[color] || 0) + 1;
-  }
-
-  // Find the color with the highest count
-  let maxCount = 0;
-  let mainColor = "";
-
-  for (const color in colorCounts) {
-    if (colorCounts[color] > maxCount) {
-      maxCount = colorCounts[color];
-      mainColor = color;
-    }
-  }
-
-  return `rgb(${mainColor})`;
-}
 
 // JavaScript to apply the effect on hover
 document.querySelectorAll(".glow-on-hover").forEach((item) => {
@@ -209,3 +161,5 @@ document.querySelectorAll(".glow-on-hover").forEach((item) => {
     applyGlowEffect(this);
   });
 });
+
+
