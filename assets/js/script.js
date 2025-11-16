@@ -47,10 +47,14 @@ for (let i = 0; i < testimonialsItem.length; i++) {
     // Set the date based on the index
     let dateText = "";
     if (i === 0) {
-      dateText = "<b class='gold-color'>From</b> Feb-2024 <b class='gold-color'>to</b> Jun-2024";
+      dateText = "<b class='gold-color'>From</b> May-2025 <b class='gold-color'>to</b> Nov-2025";
     } else if (i === 1) {
-      dateText = "<b class='gold-color'>From</b> Jul-2023 <b class='gold-color'>to</b> Sep-2023";
+      dateText = "<b class='gold-color'>From</b> Sep-2024 <b class='gold-color'>to</b> Feb-2025";
     } else if (i === 2) {
+      dateText = "<b class='gold-color'>From</b> Feb-2024 <b class='gold-color'>to</b> Jun-2024";
+    } else if (i === 3) {
+      dateText = "<b class='gold-color'>From</b> Jul-2023 <b class='gold-color'>to</b> Sep-2023";
+    } else if (i === 4) {
       dateText = "<b class='gold-color'>From</b> Oct-2022 <b class='gold-color'>to</b> Nov-2022";
     }
 
